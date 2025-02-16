@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>tutorial</title>
+    <h1>how to self-host mii creator app on linux</h1>
+    <p>this is how to host <a href="https://github.com/datkat21/mii-creator";> datkat21's mii creator</a> app on linux. i use opensuse tumnbleweed so it might have some differences in other distros like ubuntu but im sure most of part is same</p>
+    <p>sorry for windows users but its linux tutorial idk how to do that in windows</p>
+    <style>
+</style>
+  </head>
+  <body>
+    <h2>api setup</h2>
+    <p>follow the steps as listed <a href="https://github.com/datkat21/FFL-Testing-with-hats?tab=readme-ov-file#running";>here, </a>, but when git clone part, repleace 'https://github.com/ariankordi/FFL-Testing' with 'https://github.com/datkat21/FFL-Testing-with-hats', like <span style="background-color:powderblue;">git clone --recursive https://github.com/datkat21/FFL-Testing-with-hats</span>then enter the cloned directory with <span style="background-color:powderblue;"> cd FFL-Testing-with-hats </span></p>
+<p> for installing requirements on opensuse, its <span style="background-color:powderblue;">zlib-devel</span> <span style="background-color:powderblue;">Mesa-libGL-devel</span> <span style="background-color:powderblue;">libglfw-devel </span></p>
+<p>build the project using instructions then launch ffl_testing_2 as server with <span style="background-color:powderblue;">./ffl_testing_2 --server</span> then make new terminal tab. in new terminal tab, follow steps from  <a href="https://github.com/datkat21/FFL-Testing-with-hats?tab=readme-ov-file#running-the-renderer-server";>here</a>. do not close another tab or ffl_testing_2, otherwise it wouldn't work. i think go method is better, also python method seems like older and it didn't worked for me. just install the go with package manager then type <span style="background-color:powderblue;">go run .</span> inside server-impl directory</p>
+<h2>mii creator setup</h2>
+<p> install the bun.<a href="https://bun.sh"> bun website.</a></p>
+<p>make new terminal tab again, then clone the <span style="background-color:powderblue;">https://github.com/datkat21/mii-creator</span> to directory you want. do not run commands yet.</p>
+<h3>important setup</h3>
+<p>you have to edit config.ts file inside src folder. open the config.ts file with text editors.</p>
+<img src="config.png"><p>when you open up config.ts file, you'll see api url is set as <span style="background-color:powderblue">https://mii-renderer.nxw.pw/miis/image</span>, and localhost url is commented.</p>
+<img src="uncomment.png">
+<p>uncomment the localhost one then mark(or just can delete but i haven't tested)<span style="background-color:powderblue">https://mii-renderer.nxw.pw/miis/image</span> one as comment
+<p>then following the rest of steps as listed <a href="https://github.com/datkat21/mii-creator?tab=readme-ov-file#setting-up-development">here.<a/> run <span style="background-color:powderblue;">bun i</span>, then run <span style="background-color:powderblue;">bun build-ts</span> then add another terminal tab then run <span style="background-color:powderblue;">bun run serve</span> there. now go to <span style="background-color:powderblue;">http://localhost:3000</span> then see if it worked successfully. make sure you have all of 4 terminal tabs opened and running servers</p>
+<h2>notes</h2>
+<p>i might did wrong also im bad at writing and html this looks shit and hard to read sorry</p>
+  </body>
+</html>
